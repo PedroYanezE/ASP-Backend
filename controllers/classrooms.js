@@ -109,7 +109,7 @@ classroomsRouter.put('/:id', async (request, response) => {
         if (!decodedToken.id) {
             return response.status(401).json({ error: 'token missing or invalid' })
         }
- 
+
         const assistant = await Assistant.findById(decodedToken.id)
 
         if(assistant)
